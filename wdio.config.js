@@ -37,11 +37,13 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
+        './features/*.feature'
+
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+        './features/login.feature'
+
     ],
     //
     // ============
@@ -77,11 +79,10 @@ exports.config = {
         "browserName": "",
         "appium:ensureWebviewsHavePages": true,
         "appium:nativeWebScreenshot": true,
-        "sauce:options": {
-            "name": "Appium Teste Lista 11"
-        },
+        "sauce:options": { "name": "Appium Desktop Session -- Jan 14, 2025 8:09 PM" },
         "appium:newCommandTimeout": 3600,
         "appium:connectHardwareKeyboard": true
+
     }],
 
     //
@@ -159,7 +160,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/**/*.js'],
+        require: ['./features/step-definitions/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)

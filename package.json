@@ -8,5 +8,8 @@
     "@wdio/spec-reporter": "^9.6.3",
     "appium-uiautomator2-driver": "^2.45.1",
     "webdriverio": "^9.5.7"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.config.js"
   }
 }
