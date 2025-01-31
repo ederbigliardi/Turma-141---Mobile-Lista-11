@@ -27,7 +27,7 @@ When(/^clico no botao igual$/, async (numero) => {
     await $(buttonEqual).click()
 })
 
-Then(/^exibe o resultado com "([^"]*)?"$/, async (numero) => {
+Then(/^exibe o resultado como "([^"]*)?"$/, async (numero) => {
     const display = '/android.widget.TextView[@resource-id="com.google.android.calculator:id/result_final"]'
 
     // validar o resultado esperado
