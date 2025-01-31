@@ -3,7 +3,7 @@ const { Given, When, Then } = require("@wdio/cucumber-framework");
 // declaracao do elemento do display que sera visivel em 2 blocos
 
 
-Given(/^testeA$/, async () => {
+Given(/^que a calculadora esta aberta$/, async () => {
 
     const display = '//android.widget.EditText[@content-desc="No formula"]'
     // validar se carregou o display de resultado
@@ -12,7 +12,7 @@ Given(/^testeA$/, async () => {
     // expect(await $(display).getText().toEqual("0"))
 })
 
-When(/^testeB "([^"]*)?"$/, async (numero) => {
+When(/^clico no botao "([^"]*)?"$/, async (numero) => {
     const buttonNumber = `//android.widget.ImageButton[@content-desc="${numero}"]`
     await $(buttonNumber).click()
 })
