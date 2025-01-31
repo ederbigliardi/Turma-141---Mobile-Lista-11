@@ -1,7 +1,5 @@
 const { Given, When, Then } = require("@wdio/cucumber-framework");
 
-// declaracao do elemento do display que sera visivel em 2 blocos
-
 
 Given(/^que a calculadora esta aberta$/, async () => {
 
@@ -17,19 +15,33 @@ When(/^clico no botao "([^"]*)?"$/, async (numero) => {
     await $(buttonNumber).click()
 })
 
-When(/^clico no botao Somar$/, async (numero) => {
-    const buttonPlus = `//android.widget.ImageButton[@content-desc="plus"]`
-    await $(buttonPlus).click()
+When(/^clico no botao Somar$/, async () => {
+    const buttonPlus = await $(`//android.widget.ImageButton[@content-desc="plus"]`);
+    await buttonPlus.click();
 })
 
-When(/^clico no botao igual$/, async (numero) => {
-    const buttonEqual = `//android.widget.ImageButton[@content-desc="equals"]`
-    await $(buttonEqual).click()
+When(/^clico no botao Subtrair$/, async () => {
+    const buttonMinus = await $(`//android.widget.ImageButton[@content-desc="minus"]`);
+    await buttonMinus.click();
+});
+
+When(/^clico no botao Multiplicar$/, async () => {
+    const buttonMultiply = await $(`//android.widget.ImageButton[@content-desc="multiply"]`);
+    await buttonMultiply.click();
+});
+
+When(/^clico no botao Dividir$/, async () => {
+    const buttonDivide = await $(`//android.widget.ImageButton[@content-desc="divide"]`);
+    await buttonDivide.click();
+});
+
+When(/^clico no botao igual$/, async () => {
+    const buttonEqual = await $(`//android.widget.ImageButton[@content-desc="equals"]`);
+    await buttonEqual.click();
 })
 
 Then(/^exibe o resultado como "([^"]*)?"$/, async (numero) => {
-    const display = '/android.widget.TextView[@resource-id="com.google.android.calculator:id/result_final"]'
-
+    const display = '//android.widget.TextView[@resource-id="com.google.android.calculator:id/result_final"]'
     // validar o resultado esperado
     expect(await $(display).getText()).toEqual(numero)
 })
