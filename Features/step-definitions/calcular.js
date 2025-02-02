@@ -3,8 +3,8 @@ const { Given, When, Then } = require("@wdio/cucumber-framework");
 
 Given(/^que a calculadora esta aberta$/, async () => {
 
-    const display = '//android.widget.EditText[@content-desc="No formula"]'
-    // validar se carregou o display de resultado
+    const display = '//android.widget.TextView[@content-desc="No result"]'
+    // Validar se carregou o display de resultado
     await $(display).waitForDisplayed()
     // validar se o display está exibindo o número 0
     // expect(await $(display).getText().toEqual("0"))
